@@ -1,5 +1,3 @@
-// const PORT =
-
 import cac from 'cac'
 import {
   BlockTypeV1,
