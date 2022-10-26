@@ -10,7 +10,8 @@ Currently there is no any business logic, only sample code. In `client.ts`, it i
 
 ## Setup
 
-1. Install latest Node.js:
+1. Install latest Node.js
+
 2. Install PNPM:
 
    ```bash
