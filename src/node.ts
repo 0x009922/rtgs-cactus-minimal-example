@@ -1,15 +1,7 @@
-import {
-  LogLevelDesc,
-  IListenOptions,
-  Servers,
-} from '@hyperledger/cactus-common'
+import { LogLevelDesc, IListenOptions, Servers } from '@hyperledger/cactus-common'
 import { PluginRegistry } from '@hyperledger/cactus-core'
 import { Constants } from '@hyperledger/cactus-core-api'
-
-import {
-  PluginLedgerConnectorIroha2,
-  Iroha2BaseConfig,
-} from '@hyperledger/cactus-plugin-ledger-connector-iroha2'
+import { PluginLedgerConnectorIroha2, Iroha2BaseConfig } from '@hyperledger/cactus-plugin-ledger-connector-iroha2'
 
 import { crypto } from '@iroha2/crypto-target-node'
 import { setCrypto } from '@iroha2/client'

@@ -21,9 +21,7 @@ cli.command('[apiHost]').action(async ({ apiHost }) => {
     next: (event) => {
       match(event)
         .with({ binaryBlock: P.not(P.nullish) }, async ({ binaryBlock }) => {
-          const block = VersionedCommittedBlock.fromBuffer(
-            Buffer.from(binaryBlock)
-          )
+          const block = VersionedCommittedBlock.fromBuffer(Buffer.from(binaryBlock))
 
           // ! ADD YOUR BLOCK HANDLING LOGIC HERE
 
