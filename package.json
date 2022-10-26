@@ -1,0 +1,39 @@
+{
+  "name": "rtgs-cactus-minimal-example",
+  "version": "0.0.0",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "start:node": "tsx src/main",
+    "start:client": "tsx src/client"
+  },
+  "dependencies": {
+    "@hyperledger/cactus-common": "file:cactus-packages/hyperledger-cactus-common-1.0.0.tgz",
+    "@hyperledger/cactus-core": "file:cactus-packages/hyperledger-cactus-core-1.0.0.tgz",
+    "@hyperledger/cactus-core-api": "file:cactus-packages/hyperledger-cactus-core-api-1.0.0.tgz",
+    "@hyperledger/cactus-plugin-ledger-connector-iroha2": "file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz",
+    "@iroha2/client": "3.0.0",
+    "@iroha2/crypto-core": "^0.1.1",
+    "@iroha2/crypto-target-node": "^0.4.0",
+    "@iroha2/data-model": "3.0.0",
+    "body-parser": "^1.20.1",
+    "cac": "^6.7.14",
+    "consola": "^2.15.3",
+    "express": "^4.18.2",
+    "hada": "^0.0.8",
+    "socket.io": "^4.5.3",
+    "ts-pattern": "^4.0.5",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.11.5",
+    "@types/uuid": "^8.3.4",
+    "tsx": "^3.11.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  }
+}
