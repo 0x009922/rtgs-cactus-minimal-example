@@ -14,7 +14,7 @@ import consola from 'consola'
 
 const cli = cac('cactus-client')
 
-cli.command('[apiHost]').action(async ({ apiHost }) => {
+cli.command('<apiHost>').action(async (apiHost: string) => {
   const client = new Iroha2ApiClient(new Configuration({ basePath: apiHost }))
 
   client.watchBlocksV1({ type: BlockTypeV1.Binary }).subscribe({
@@ -25,19 +25,21 @@ cli.command('[apiHost]').action(async ({ apiHost }) => {
 
           // ! ADD YOUR BLOCK HANDLING LOGIC HERE
 
-          // you can make a transaction:
-          await client.transactV1({
-            transaction: {
-              instruction: { name: IrohaInstruction.MintAsset, params: [] },
-            },
-          })
+          consola.info('Block with height: %o', block.as('V1').header.height)
 
-          // and a query:
-          await client.queryV1({
-            query: {
-              query: IrohaQuery.FindAllDomains,
-            },
-          })
+          // // you can make a transaction:
+          // await client.transactV1({
+          //   transaction: {
+          //     instruction: { name: IrohaInstruction.MintAsset, params: [] },
+          //   },
+          // })
+
+          // // and a query:
+          // await client.queryV1({
+          //   query: {
+          //     query: IrohaQuery.FindAllDomains,
+          //   },
+          // })
         })
         .otherwise((x) => {
           consola.error('Cannot parse block: %o', x)
@@ -46,4 +48,6 @@ cli.command('[apiHost]').action(async ({ apiHost }) => {
   })
 })
 
-cli.runMatchedCommand()
+cli.help()
+
+cli.parse()

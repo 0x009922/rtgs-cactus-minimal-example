@@ -9,7 +9,7 @@ import { setCrypto } from '@iroha2/client'
 import { v4 as uuid } from 'uuid'
 import { Server as SocketIoServer } from 'socket.io'
 import http from 'http'
-import express from 'express'
+import Express from 'express'
 import bodyParser from 'body-parser'
 import consola from 'consola'
 
@@ -30,23 +30,23 @@ async function start(config: Required<Iroha2BaseConfig>): Promise<{
   })
 
   // Run http server
-  const expressApp = express()
+  const expressApp = Express()
   expressApp.use(bodyParser.json({ limit: '250mb' }))
   const httpServer = http.createServer(expressApp)
   const listenOptions: IListenOptions = {
     hostname: '127.0.0.1',
     port: 0,
-    server: this.connectorServer,
+    server: httpServer,
   }
   const addressInfo = await Servers.listen(listenOptions)
   const apiHost = `http://${addressInfo.address}:${addressInfo.port}`
 
-  const socketIoServer = new SocketIoServer(this.connectorServer, {
+  const socketIoServer = new SocketIoServer(httpServer, {
     path: Constants.SocketIoConnectionPathV1,
   })
 
   await connector.getOrCreateWebServices()
-  await connector.registerWebServices(expressApp, this.socketioServer)
+  await connector.registerWebServices(expressApp, socketIoServer)
 
   async function stop() {
     await Promise.all([

@@ -5,10 +5,10 @@ specifiers:
   '@hyperledger/cactus-core': file:cactus-packages/hyperledger-cactus-core-1.0.0.tgz
   '@hyperledger/cactus-core-api': file:cactus-packages/hyperledger-cactus-core-api-1.0.0.tgz
   '@hyperledger/cactus-plugin-ledger-connector-iroha2': file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz
-  '@iroha2/client': 3.0.0
+  '@iroha2/client': 4.0.0
   '@iroha2/crypto-core': ^0.1.1
   '@iroha2/crypto-target-node': ^0.4.0
-  '@iroha2/data-model': 3.0.0
+  '@iroha2/data-model': 4.0.0
   '@types/body-parser': ^1.19.2
   '@types/express': ^4.17.14
   '@types/node': ^18.11.5
@@ -19,6 +19,7 @@ specifiers:
   express: ^4.18.2
   hada: ^0.0.8
   socket.io: ^4.5.3
+  socket.io-client: ^4.5.3
   ts-pattern: ^4.0.5
   tsx: ^3.11.0
   uuid: ^9.0.0
@@ -28,16 +29,17 @@ dependencies:
   '@hyperledger/cactus-core': file:cactus-packages/hyperledger-cactus-core-1.0.0.tgz_@types+express@4.17.14
   '@hyperledger/cactus-core-api': file:cactus-packages/hyperledger-cactus-core-api-1.0.0.tgz
   '@hyperledger/cactus-plugin-ledger-connector-iroha2': file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz_@types+express@4.17.14
-  '@iroha2/client': 3.0.0
+  '@iroha2/client': 4.0.0
   '@iroha2/crypto-core': 0.1.1
   '@iroha2/crypto-target-node': 0.4.0
-  '@iroha2/data-model': 3.0.0
+  '@iroha2/data-model': 4.0.0
   body-parser: 1.20.1
   cac: 6.7.14
   consola: 2.15.3
   express: 4.18.2
   hada: 0.0.8
   socket.io: 4.5.3
+  socket.io-client: 4.5.3
   ts-pattern: 4.0.5
   uuid: 9.0.0
 
@@ -136,12 +138,12 @@ packages:
       - supports-color
     dev: false
 
-  /@iroha2/client/3.0.0:
-    resolution: {integrity: sha512-fh5B+ET/mjSQUI5rovzyD4GL8z/J3NQEjeA8q3/ACS4Wv/Llcd32IjqSeNAUE/irBvVQirx192xQyS/+tSqy6A==}
+  /@iroha2/client/4.0.0:
+    resolution: {integrity: sha512-gNsIkyFNkUs69M+PJxyytT7kpDS3yIeNtNhroV00ILGnJEiJ3q1JZg4PK5Ij5q0JekyIDG/ffOnlUZTJp5QpgA==}
     engines: {node: '>=14.0.0'}
     dependencies:
       '@iroha2/crypto-core': 0.1.1
-      '@iroha2/data-model': 3.0.0
+      '@iroha2/data-model': 4.0.0
       '@types/ws': 8.5.3
       debug: 4.3.4
       emittery: 0.10.2
@@ -163,8 +165,8 @@ packages:
       '@iroha2/crypto-core': 0.1.1
     dev: false
 
-  /@iroha2/data-model/3.0.0:
-    resolution: {integrity: sha512-no3oB0AwN8Ti+Dpm2zBxorRhRXKSBolGCSB20p/GNTg94sdJCacAzihisICyHNkEtDFsZnDOIvQzZ2sMaEHCSQ==}
+  /@iroha2/data-model/4.0.0:
+    resolution: {integrity: sha512-86KO4gFjQIJFWTLIdcMWcwQM3IODETl0hrfdtj1yD0IjYM/l6obMnHqNXeu8+rToDmjGInP6Tyvotf8EK38BOg==}
     dependencies:
       '@iroha2/i64-fixnum': 0.4.2
       '@scale-codec/definition-runtime': 2.2.2
@@ -620,6 +622,20 @@ packages:
   /encodeurl/1.0.2:
     resolution: {integrity: sha512-TPJXq8JqFaVYm2CWmPvnP2Iyo4ZSM7/QKcSmuMLDObfpH5fi7RUGmd/rTDf+rut/saiDiQEeVTNgAmJEdAOx0w==}
     engines: {node: '>= 0.8'}
+    dev: false
+
+  /engine.io-client/6.2.3:
+    resolution: {integrity: sha512-aXPtgF1JS3RuuKcpSrBtimSjYvrbhKW9froICH4s0F3XQWLxsKNxqzG39nnvQZQnva4CMvUK63T7shevxRyYHw==}
+    dependencies:
+      '@socket.io/component-emitter': 3.1.0
+      debug: 4.3.4
+      engine.io-parser: 5.0.4
+      ws: 8.2.3
+      xmlhttprequest-ssl: 2.0.0
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
     dev: false
 
   /engine.io-parser/5.0.4:
@@ -1633,6 +1649,20 @@ packages:
     resolution: {integrity: sha512-W4N+o69rkMEGVuk2D/cvca3uYsvGlMwsySWV447y99gUPghxq42BxqLNMndb+a1mm/5/7NeXVQS7RLa2XyXvYg==}
     dev: false
 
+  /socket.io-client/4.5.3:
+    resolution: {integrity: sha512-I/hqDYpQ6JKwtJOf5ikM+Qz+YujZPMEl6qBLhxiP0nX+TfXKhW4KZZG8lamrD6Y5ngjmYHreESVasVCgi5Kl3A==}
+    engines: {node: '>=10.0.0'}
+    dependencies:
+      '@socket.io/component-emitter': 3.1.0
+      debug: 4.3.4
+      engine.io-client: 6.2.3
+      socket.io-parser: 4.2.1
+    transitivePeerDependencies:
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+    dev: false
+
   /socket.io-parser/4.0.5:
     resolution: {integrity: sha512-sNjbT9dX63nqUFIOv95tTVm6elyIU4RvB1m8dOeZt+IgWwcWklFDOdmGcfo3zSiRsnR/3pJkjY5lfoGqEe4Eig==}
     engines: {node: '>=10.0.0'}
@@ -1839,6 +1869,11 @@ packages:
         optional: true
     dev: false
 
+  /xmlhttprequest-ssl/2.0.0:
+    resolution: {integrity: sha512-QKxVRxiRACQcVuQEYFsI1hhkrMlrXHPegbbd1yn9UHOmRxY+si12nQYzri3vbzt8VdTTRviqcKxcyllFas5z2A==}
+    engines: {node: '>=0.4.0'}
+    dev: false
+
   /xtend/4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
@@ -1890,7 +1925,7 @@ packages:
     dev: false
 
   file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz_@types+express@4.17.14:
-    resolution: {integrity: sha512-Zv2wOjlm/w7sApR6Q9xMXm6DN3vYhUlBL9vpvwDGI0jhEDfNNyIVEmO6j7Une5zysbAYXwj2VroEc0aadQ0+Zg==, tarball: file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz}
+    resolution: {integrity: sha512-VEe9cZ0uhiLD10nfOWHVmad69kulvls51mOa6RkWZt/w2Kn5NoBgp8v1xDaOIQyflFdkStGm4reEJ+efMy61dA==, tarball: file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz}
     id: file:cactus-packages/hyperledger-cactus-plugin-ledger-connector-iroha2-1.0.0.tgz
     name: '@hyperledger/cactus-plugin-ledger-connector-iroha2'
     version: 1.0.0
@@ -1899,10 +1934,10 @@ packages:
       '@hyperledger/cactus-common': 1.0.0
       '@hyperledger/cactus-core': 1.0.0_@types+express@4.17.14
       '@hyperledger/cactus-core-api': 1.0.0
-      '@iroha2/client': 3.0.0
+      '@iroha2/client': 4.0.0
       '@iroha2/crypto-core': 0.1.1
       '@iroha2/crypto-target-node': 0.4.0
-      '@iroha2/data-model': 3.0.0
+      '@iroha2/data-model': 4.0.0
       express: 4.17.1
       fast-safe-stringify: 2.1.1
       hada: 0.0.8
